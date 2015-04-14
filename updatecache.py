@@ -16,8 +16,6 @@ class UpdateCache(buildstep.BuildStep):
 
     def start(self):
         pkg = SourceCachePackage(self.pkg)
-        #self.step_status.setText(str(pkg.remote_isValid()))
-        #self.finished(SUCCESS)  
         cmd = remotecommand.RemoteCommand('updateCache',{
             '_package':pkg})
         d = self.runCommand(cmd)

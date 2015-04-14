@@ -43,6 +43,8 @@ class SourceCachePackage(pb.Referenceable):
     def __init__(self,pkg):
         self.pkg = pkg
         self.f = None
+    def remote_packageName(self):
+        return self.pkg
     def remote_isValid(self):
         return SourceCache.findPackage(self.pkg) is not False
     def remote_checksum(self):
